@@ -1,0 +1,67 @@
+﻿.board {
+    width: 870px;
+}
+
+.space {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+}
+
+.space-column-header {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.space-row-header {
+    width: 30px;
+    height: 80px;
+    line-height: 80px;
+}
+
+.space-row-header-text {
+    -webkit-transform: rotate(-90deg);
+}
+
+.space, .space-column-header, .space-row-header
+{
+    float: left;
+    margin: 10px;
+    text-align: center;
+    border-collapse: separate;
+    border: 1px solid gray;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#x0y0 {
+    width: 30px;
+    height: 30px;
+    border: 1px solid transparent;
+}
+
+.piece {
+    border-radius: 50%;
+    background: transparent;
+    height: 80px;
+    width: 80px;
+    display: inline-block;
+}
+
+.player1 {
+    background: red;
+}
+
+.player2 {
+    background: gold;
+}
+
+.player3 {
+    background: greenyellow;
+}
+
+.player4 {
+    background: blue;
+}

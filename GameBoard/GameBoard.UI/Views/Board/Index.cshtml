@@ -1,0 +1,39 @@
+﻿@model GameBoard.UI.Models.Board
+
+@{
+    ViewBag.Title = Model.Game.Name;
+}
+
+<h2>@Model.Game.Name</h2>
+<div class="board">
+    <div class="space-row-header" id="x0y0"></div>
+    @for (int i = 1; i <= Model.Width; i++)
+    {
+        <div class="space-column-header">@i</div>
+    }
+    @for (int x = 1; x <= Model.Height; x++)
+    {
+        <div class="space-row-header"><div class="space-row-header-text">@x</div></div>
+        for (int y = 1; y <= Model.Width; y++)
+        {
+            var cell = string.Format("x{0}y{1}", x, y);
+            <div class="space"><span class="piece @cell"></span></div>
+        }
+    }
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(".piece").click(function() {
+            var $element = $(this);
+            var p1 = "player1";
+            var p2 = "player2";
+            if ($element.hasClass(p1)) {
+                $element.addClass(p2).removeClass(p1);
+            } else if ($element.hasClass(p2)) {
+                $element.removeClass(p2);
+            } else {
+                $element.addClass(p1);
+            }
+        });
+    </script>
+}
